@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RechargeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R2F-gF-Hcp">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.2579420306604151" green="0.63278074377042726" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="LocationApp" id="sxm-Mh-el8"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Rs-wq-BWi">
+                                <rect key="frame" x="20" y="74" width="335" height="585"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="S0s-u0-zU6"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="reD-O7-ZoK"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="R2F-gF-Hcp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BrH-A3-dyo"/>
+                            <constraint firstItem="5Rs-wq-BWi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="LU5-mo-BtC"/>
+                            <constraint firstItem="R2F-gF-Hcp" firstAttribute="centerX" secondItem="5Rs-wq-BWi" secondAttribute="centerX" id="RgY-zL-YVm"/>
+                            <constraint firstItem="R2F-gF-Hcp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Y7x-3E-hks"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5Rs-wq-BWi" secondAttribute="bottom" constant="8" id="gZ3-L8-4Vy"/>
+                            <constraint firstItem="5Rs-wq-BWi" firstAttribute="top" secondItem="R2F-gF-Hcp" secondAttribute="bottom" constant="10" id="uE7-Za-KOU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Rs-wq-BWi" secondAttribute="trailing" constant="20" id="wnh-LP-wqg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="offerListTableView" destination="5Rs-wq-BWi" id="D03-lV-4sR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="133.5832083958021"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="DQO-iK-4px">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="Yye-4F-rv2" customClass="MapViewController" customModule="RechargeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F23-fZ-92a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F92-Vn-fCk">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.25794203069999999" green="0.63278074380000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="LocationApp" id="r22-2O-IGn">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="3AN-EK-iww">
+                                            <connections>
+                                                <action selector="backButtonTapped:" destination="Yye-4F-rv2" id="ZfK-vk-z23"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Kp0-Ct-XK9">
+                                <rect key="frame" x="10" y="84" width="355" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="G4J-fK-WIR"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KZL-NH-9Zo" firstAttribute="trailing" secondItem="Kp0-Ct-XK9" secondAttribute="trailing" constant="10" id="Fl8-O4-9ez"/>
+                            <constraint firstItem="Kp0-Ct-XK9" firstAttribute="leading" secondItem="KZL-NH-9Zo" secondAttribute="leading" constant="10" id="GmK-N2-OCZ"/>
+                            <constraint firstItem="F92-Vn-fCk" firstAttribute="leading" secondItem="KZL-NH-9Zo" secondAttribute="leading" id="dVZ-fF-ud4"/>
+                            <constraint firstItem="F92-Vn-fCk" firstAttribute="trailing" secondItem="KZL-NH-9Zo" secondAttribute="trailing" id="lzO-1U-xrT"/>
+                            <constraint firstItem="Kp0-Ct-XK9" firstAttribute="top" secondItem="F92-Vn-fCk" secondAttribute="bottom" constant="20" id="q6V-fm-Ys5"/>
+                            <constraint firstItem="F92-Vn-fCk" firstAttribute="top" secondItem="KZL-NH-9Zo" secondAttribute="top" id="rEJ-G6-X2j"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KZL-NH-9Zo"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="3AN-EK-iww" id="Gay-aG-7A9"/>
+                        <outlet property="mapView" destination="Kp0-Ct-XK9" id="ykC-Qj-IZc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AMV-cN-GFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="602" y="134"/>
+        </scene>
+    </scenes>
+</document>
